@@ -24,7 +24,9 @@ sources variables from .env.prod
 and replaces the nessesary deployment files 
 
 
-interconnect via "SERVICENAME".NAMESPACE.svr.cluster.local
+interconnect via "SERVICENAME".NAMESPACE.svc.cluster.local
+
+aka: mariadb-service.default.svc.cluster.local
 ## Features:
 
 * [x] Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram) should work with slight modifications on any kubernetes cluster
