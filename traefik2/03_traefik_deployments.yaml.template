@@ -1,0 +1,91 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: default
+  name: traefik-ingress-controller
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: traefik-acme-data
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 1Gi
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: default
+  name: traefik
+  labels:
+    app: traefik
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      serviceAccountName: traefik-ingress-controller
+      containers:
+        - name: traefik
+          image: traefik:v2.1
+          volumeMounts:
+          - name: volv
+            mountPath: /data
+          args:
+            - --api.insecure
+            - --accesslog
+            - --entrypoints.web.Address=:80
+            - --entrypoints.websecure.Address=:443
+            - --providers.kubernetescrd
+            - --certificatesresolvers.myresolver.acme.email=info@level3.tv
+            - --certificatesresolvers.myresolver.acme.storage=/data/acme_le.json
+            # Please note that this is the staging Let's Encrypt server.
+            # Once you get things working, you should remove that whole line altogether.
+            - --certificatesresolvers.myresolver.acme.tlschallenge
+          ports:
+            - name: web
+              containerPort: 80
+            - name: websecure
+              containerPort: 443
+            - name: admin
+              containerPort: 8080
+      volumes:
+      - name: volv
+        persistentVolumeClaim:
+          claimName: traefik-acme-data
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: default
+  name: whoami
+  labels:
+    app: whoami
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: whoami
+  template:
+    metadata:
+      labels:
+        app: whoami
+    spec:
+      containers:
+        - name: whoami
+          image: containous/whoami
+          ports:
+            - name: web
+              containerPort: 80
