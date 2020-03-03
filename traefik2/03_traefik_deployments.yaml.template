@@ -48,7 +48,7 @@ spec:
             - --entrypoints.web.Address=:80
             - --entrypoints.websecure.Address=:443
             - --providers.kubernetescrd
-            - --certificatesresolvers.myresolver.acme.email=info@level3.tv
+            - --certificatesresolvers.myresolver.acme.email={{acmeemail}}
             - --certificatesresolvers.myresolver.acme.storage=/data/acme_le.json
             # Please note that this is the staging Let's Encrypt server.
             # Once you get things working, you should remove that whole line altogether.
