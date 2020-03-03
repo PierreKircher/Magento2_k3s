@@ -34,8 +34,9 @@ and replaces the nessesary deployment files
 * [] ElasticSearch
 * [x] PHPMyAdmin
 
-!!!DO NOT USE RIGHT NOW UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING 
-please follow the repo for updates!!
+!!!DO NOT USE RIGHT NOW UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING
+
+please *WATCH* or *STAR* the repo for updates!!
 
 security consideration
 
