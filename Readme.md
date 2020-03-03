@@ -11,3 +11,5 @@ Scaleable Magento2 Infrastructure on k8s - i use k3s for simplicity and Thin ove
 * Redis for Cache
 * ElasticSearch
 * PHPMyAdmin
+
+!!!do not use in production yet
