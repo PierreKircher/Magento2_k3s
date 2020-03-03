@@ -11,6 +11,13 @@ for more infos on k3s: https://k3s.io/
 this setup works for 1 node or multiple nodes 
 i personaly run this setup on gcp
 
+rename default.env to .env.(prod/dev/test)
+and run setup (prod/dev/test) 
+
+- like setup prod
+sources variables from .env.prod
+and replaces the nessesary deployment files 
+
 ## Features:
 
 * Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram)
@@ -31,4 +38,6 @@ security consideration
 iptables on host or cloud firewall 
 
 block 8080 - admin port for dashboard / traefik
+
+
 
