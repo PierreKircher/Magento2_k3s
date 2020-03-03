@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`admin.pkcluster.co`)
+    - match: Host(`{{phpmyadmindomain}}`)
       kind: Rule
       services:
         - name: phpmyadmin-service
