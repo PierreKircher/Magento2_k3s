@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: phpmyadminroute
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`admin.pkcluster.co`)
+      kind: Rule
+      services:
+        - name: phpmyadmin-service
+          port: 80
+  tls:
+    certResolver: myresolver

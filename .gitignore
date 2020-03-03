@@ -1,0 +1,2 @@
+phpmyadmin/00_phpmyadmin_secret.yaml
+phpmyadmin/03_phpmyadmin_ingress.yaml
