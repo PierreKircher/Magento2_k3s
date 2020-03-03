@@ -14,7 +14,7 @@ spec:
     - protocol: TCP
       name: mailhog
       port: 8053
-    - portocol: TCP
+    - protocol: TCP
       name: mysql
       port: 3306
     - protocol: TCP

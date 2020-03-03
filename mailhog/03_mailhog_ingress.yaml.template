@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: mailhogroute
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{MAILHOG_DOMAIN}}`)
+      kind: Rule
+      services:
+        - name: mailhog-service
+          port: 8025
+  tls:
+    certResolver: myresolver

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mailhog-service
+spec:
+  selector:
+    app: mailhog
+  ports:
+  - name: mailhogmta
+    protocol: TCP
+    port: 1025
+    targetPort: 1025
+  - name: mailhog
+    protocol: TCP
+    port: 8025
+    targetPort: 8025
