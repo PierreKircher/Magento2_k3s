@@ -17,6 +17,9 @@ spec:
       containers:
         - name: mariadb
           image: mariadb:10.5.1-bionic
+          volumeMounts:
+          - name: mariadb-vol
+            mountPath: /var/lib/mysql
           ports:
             - containerPort: 3306
           env:
@@ -25,3 +28,7 @@ spec:
                 secretKeyRef:
                   name: maradb-secret
                   key: MYSQL_ROOT_PASSWORD
+      volumes:
+      - name: mariadb-vol
+        persistentVolumeClaim:
+          claimName: mariadb-pvc
