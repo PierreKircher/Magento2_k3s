@@ -14,7 +14,7 @@ i personaly run this setup on gcp
 rename default.env to .env.(prod/dev/test)
 and run setup (prod/dev/test) 
 
-- like setup prod
+- like ./setup.sh prod
 sources variables from .env.prod
 and replaces the nessesary deployment files 
 
