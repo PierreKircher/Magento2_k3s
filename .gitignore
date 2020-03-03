@@ -2,4 +2,4 @@
 traefik2/03_traefik_deployments.yaml
 phpmyadmin/03_phpmyadmin_ingress.yaml
 secrets/00_phpmyadmin_secret_*.yaml
-mailhog/02_mailhog_deployment.yaml
+mailhog/03_mailhog_ingress.yaml
