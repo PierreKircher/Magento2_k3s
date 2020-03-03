@@ -1,4 +1,4 @@
-#Scaleable Magento2 Infrastucture on Kubernetes (k3s) with letsencrypt and Traefik2
+# Scaleable Magento2 Infrastucture on Kubernetes (k3s) with letsencrypt and Traefik2
 
 ## Prerequirements
 
