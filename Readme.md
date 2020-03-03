@@ -29,7 +29,7 @@ and replaces the nessesary deployment files
 * [x] Traefik 2.x with Letsencrypt auto SSL
 * [] Mysql
 * [] Magento2.3 php-7.3
-* [] MailHog
+* [x] MailHog
 * [] PersistentVolumes
 * [] Redis For Sessions
 * [] Redis for Cache
