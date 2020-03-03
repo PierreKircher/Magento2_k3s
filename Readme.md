@@ -8,8 +8,11 @@ curl -sfL https://get.k3s.io | sh -
 
 for more infos on k3s: https://k3s.io/
 
-this setup works for 1 node or multiple nodes 
-i personaly run this setup on gcp
+this setup should work for 1 node or multiple nodes 
+
+the only issue right now would be the fs - which is still local so nodepinning or a distributed fs would be required
+
+scripts are very rough right now - i get a go cli in place as soon as the deployments are working
 
 rename default.env to .env.(prod/dev/test)
 and run setup (prod/dev/test) 
@@ -20,7 +23,7 @@ and replaces the nessesary deployment files
 
 ## Features:
 
-* Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram)
+* [x] Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram)
 * [x] Traefik 2.x with Letsencrypt auto SSL
 * [] Mysql
 * [] Magento2.3 php-7.3
@@ -31,13 +34,11 @@ and replaces the nessesary deployment files
 * [] ElasticSearch
 * [x] PHPMyAdmin
 
-!!!do not use in production yet
+!!!DO NOT USE RIGHT NOW UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING 
+please follow the repo for updates!!
 
 security consideration
 
-iptables on host or cloud firewall 
+iptables on host/s or cloud firewall 
 
-block 8080 - admin port for dashboard / traefik
-
-
-
+block 8080 - traefik admin for dashboard 
