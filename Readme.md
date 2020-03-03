@@ -25,7 +25,7 @@ and replaces the nessesary deployment files
 
 ## Features:
 
-* [x] Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram)
+* [x] Lightweight fully certified cncf Kubernetes Distro (K3s - under 500 mb ram) should work with slight modifications on any kubernetes cluster
 * [x] Traefik 2.x with Letsencrypt auto SSL
 * [] Mysql
 * [] Magento2.3 php-7.3
